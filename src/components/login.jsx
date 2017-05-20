@@ -2,24 +2,23 @@
     import axios from 'axios';
 
     class Login extends Component{
-       constructor() {
+        constructor() {
         super()
         this.state ={
-            data:'',
-        };
-      }
+                        data:'',
+                    };
+        }
         login(form){
-           var data={
-               usuario:form.user.value,
-               senha:form.password.value
-           }
-           var th= this;
+            var data={
+                        usuario:form.user.value,
+                        senha:form.password.value
+                     }
+            var th= this;
 
 
          axios
         .get('https://api.github.com/users/' + 'isnack')
-        .then(response => th.setState({data: response.data.url})
-             )
+        .then(response => th.setState({data: response.data.url}))
         .catch(err => console.log(err))
         }
 
@@ -35,7 +34,7 @@
                 </form>
                  <div>{this.state.data}</div>
                 
-          </div>
+            </div>
             )
         }
 
